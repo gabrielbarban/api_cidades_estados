@@ -10,6 +10,8 @@ if(empty($_GET['uf'])){
 }
 
 $data = $cidades->lista_cidades($uf);
+$data = mb_convert_encoding($data, "UTF-8");
+
 echo json_encode($data);
 
 ?>
