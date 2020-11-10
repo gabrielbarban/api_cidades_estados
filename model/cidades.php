@@ -15,6 +15,14 @@ class cidades
 		$data = $crud->find($query);
 		return $data; 
 	}
+
+	public function lista_cidades_by_typing($text)
+    {
+        $crud = new Crud();
+        $query = "SELECT CONCAT(Nome, ' - ', Uf) as 'nome' FROM municipio";
+        $data = $crud->find($query);
+        return $data;
+    }
 }
 
 ?>
